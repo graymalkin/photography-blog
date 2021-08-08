@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<div class="hero">
+  <div>
+    <img src="{{ .Site.BaseURL }}{{ .Params.image }}" alt="{{ .Params.alt }}" />
+  </div>
+</div>
+
+<article>
+  {{ partial "exif-info.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+</article>
+
+
+{{ partial "copyright.html" . }}
+
+{{ end }}

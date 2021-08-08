@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+<article>
+  <h1>{{ .Site.Title }}</h1>
+  <div class="image-index">
+    {{ range .Pages }}
+    <div>
+        <img src="{{ .Params.image }}" alt="{{ .Params.alt }}"/><br />
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </div>
+    {{ end }}
+  </div>
+</article>
+
+
+{{ end }}
