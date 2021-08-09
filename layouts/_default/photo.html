@@ -2,7 +2,13 @@
 
 <div class="hero">
   <div>
-    <img src="{{ .Site.BaseURL }}{{ .Params.image }}" alt="{{ .Params.alt }}" />
+    <!-- <img src="{{ .Site.BaseURL }}{{ .Params.image }}" alt="{{ .Params.alt }}" /> -->
+    <img srcset="{{ .Site.BaseURL}}{{ .Params.image | replaceRE "\\.(.*)$" "-small.$1" }} 320w,
+                 {{ .Site.BaseURL}}{{ .Params.image | replaceRE "\\.(.*)$" "-medium.$1" }} 500w,
+                 {{ .Site.BaseURL}}{{ .Params.image | replaceRE "\\.(.*)$" "-large.$1" }} 2500w"
+      sizes="(max-width: 400px) 320px, (max-width: 800px) 500px, 2500px"
+      src="{{ .Site.BaseURL}}{{ .Params.image | replaceRE "\\.(.*)$" "-small.$1" }}"
+      alt={{ .Params.alt }} />
   </div>
 </div>
 
@@ -11,8 +17,5 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
 </article>
-
-
-{{ partial "copyright.html" . }}
 
 {{ end }}

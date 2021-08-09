@@ -5,7 +5,7 @@
   <div class="image-index">
     {{ range .Pages }}
     <div>
-        <img src="{{ .Params.image }}" alt="{{ .Params.alt }}"/><br />
+        <img src="{{ .Params.thumbnail }}" alt="{{ .Params.alt }}"/><br />
         <a href="{{ .Permalink }}">{{ .Title }}</a>
     </div>
     {{ end }}
