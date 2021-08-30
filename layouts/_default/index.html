@@ -1,15 +1,25 @@
 {{ define "main" }}
 
-<article>
+<nav>
   <h1>{{ .Site.Title }}</h1>
-  <div class="image-index">
+</nav>
+
+<article>
+  <ul class="image-index">
     {{ range .Pages }}
-    <div>
-        <img src="{{ .Params.thumbnail }}" alt="{{ .Params.alt }}"/><br />
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </div>
+    <li>
+      <a href="{{ .Permalink }}">
+        <img src="{{ .Params.thumbnail }}" 
+          srcset="{{ .Site.BaseURL}}{{ .Params.image | replaceRE "\\.(.*)$" "-small.$1" }} 320w,
+                  {{ .Site.BaseURL}}{{ .Params.image | replaceRE "\\.(.*)$" "-medium.$1" }} 750w,
+                  {{ .Site.BaseURL}}{{ .Params.image | replaceRE "\\.(.*)$" "-large.$1" }} 2500w"
+          sizes="(max-width: 400px) 320px, (max-width: 800px) 750px, 2500px"
+          alt="{{ .Params.alt }}" />
+        <!-- {{ .Title }} -->
+      </a>
+    </li>
     {{ end }}
-  </div>
+  </ul>
 </article>
 
 

@@ -4,13 +4,14 @@
   <title>Photography</title>
   <link rel="stylesheet" href="{{ .Site.BaseURL }}styles.css">
   <script src="{{ .Site.BaseURL }}scripts/exif.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap" rel="stylesheet">
 </head>
-  <body>
-    {{ block "main" . }}
-    {{ end }}
-    {{ partial "copyright.html" . }}
-  </body>
+<body>
+  {{ block "main" . }}
+  {{ end }}
+  {{ partial "copyright.html" . }}
+</body>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap" rel="stylesheet" async>
 </html>
