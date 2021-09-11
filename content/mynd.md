@@ -2,7 +2,7 @@
 layout: photo
 title: Glider Ridge Soaring at Long Mynd
 location: Long Mynd, Shropshire
-date: 04-02-2018
+date: 2018-02-04
 image: images/mynd-glider.jpeg
 alt: Ashford International
 thumbnail: thumbs/mynd-glider.jpeg
